@@ -1,10 +1,8 @@
-
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 
-# Dummy data similar to your dataset structure
 data = pd.DataFrame({
     "SOC (%)": [43.7, 95.6, 30.5, 78.1, 60.2],
     "Voltage (V)": [3.62, 3.87, 3.55, 3.78, 3.60],
@@ -17,12 +15,10 @@ data = pd.DataFrame({
     "Charging Cycles": [112, 398, 210, 300, 150],
 })
 
-# Feature scaling
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(data)
 scaled_df = pd.DataFrame(scaled_data, columns=data.columns)
 
-# Plotting SOC (%) before and after scaling
 fig, axes = plt.subplots(2, 1, figsize=(12, 8))
 
 sns.kdeplot(data["SOC (%)"], ax=axes[0], label="Original", fill=True)
