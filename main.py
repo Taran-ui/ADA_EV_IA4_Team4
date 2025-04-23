@@ -34,7 +34,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # === Model 1: Baseline Random Forest ===
-rf_base = RandomForestClassifier(random_state=42)
+rf_base = RandomForestClassifier(n_estimators=50, max_depth=5, random_state=42)
 rf_base.fit(X_train, y_train)
 rf_base_preds = rf_base.predict(X_test)
 
